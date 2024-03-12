@@ -1,3 +1,5 @@
+import { Rule } from "sanity";
+
 const BlogSchema = {
   name: 'blog',
   type: 'document',
@@ -7,6 +9,7 @@ const BlogSchema = {
       name: 'title',
       type: 'string',
       title: 'Title of the blog article',
+      validation: (Rule: Rule ) => Rule.required(),
     },
     {
       name: 'slug',
@@ -14,17 +17,20 @@ const BlogSchema = {
       title: 'slug of the article',
       options: {
         source: 'title',
-      }
+      },
+      validation: (Rule: Rule ) => Rule.required(),
     },
     {
       name: 'titleImage',
       type: 'image',
       title: 'Title image of the article',
+      validation: (Rule: Rule ) => Rule.required(),
     },
     {
       name: 'smallDescription',
       type: 'text',
       title: 'Small description image of the article',
+      validation: (Rule: Rule ) => Rule.required(),
     },
     {
       name: 'content',
@@ -34,13 +40,25 @@ const BlogSchema = {
         {
           type: 'block',
         }
-      ]
+      ],
+      validation: (Rule: Rule ) => Rule.required(),
     },
     {
       name: 'publishedAt',
       type: 'datetime',
       title: 'Published at',
     },
+    {
+      name: 'tags',
+      type: 'array',
+      of: [
+        {
+          type: 'reference',
+          to: [{ type: 'tag' }], // Reference to the 'tag' document type
+        },
+      ],
+      validation: (Rule: Rule ) => Rule.required(),
+    }
   ]
 }
 

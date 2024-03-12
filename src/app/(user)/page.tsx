@@ -6,16 +6,18 @@ export default async function Home() {
   const posts = await sanityService.getAllPosts();
 
   return (
-    <div>
+    <div className='grid grid-cols-4 gap-4'>
       {posts.map((post: any) => (
-        <Link href={{
+        <Link
+          href={{
             pathname: `/blogs/${post.slug.current}`,
-            query: {slug: post.slug.current}
-        }} key={post._id}>
-          <div className="mt-4 bg-gray-100 p-4">
-            <h1 className="text-2xl font-semibold">{post.title}</h1>
-            <p>{post.slug.current}</p>
-            <img className="h-64 w-96 object-cover" src={post.thumbnail} alt={post.title} />
+          }}
+          key={ post._id }
+        >
+          <div className="mt-4 p-4">
+            <img className="h-64 w-96 object-cover" src={ post.thumbnail } alt={ post.title } />
+            <h1 className="text-2xl font-semibold">{ post.title }</h1>
+            <p>{ post.slug.current }</p>
           </div>
         </Link>
       ))}
