@@ -16,7 +16,12 @@ export class SanityService implements ISanityService {
     const query = groq`*[_type == "blog"]{
       _id,
       title,
+      smallDescription,
       slug,
+      "tags": tags[]-> {
+        "name": title,
+        "id": _id,
+      },
       "thumbnail": titleImage.asset->url
     }`;
 

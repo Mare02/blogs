@@ -15,6 +15,19 @@ const config: Config = {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography'),],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require("daisyui"),
+  ],
+  daisyui: { //https://daisyui.com/docs/config/
+    themes: ["light"],
+    darkTheme: "dark",
+    base: true,
+    styled: true,
+    utils: true,
+    prefix: "",
+    logs: true,
+    themeRoot: ":root",
+  },
 };
 export default config;
