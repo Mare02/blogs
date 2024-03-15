@@ -64,7 +64,7 @@ const BlogSchema = {
       title: 'Author',
       type: 'reference',
       to: [{ type: 'user' }],
-      // validation: (Rule: Rule) => Rule.required(),
+      validation: (Rule: Rule) => Rule.required(),
     },
   ]
 }

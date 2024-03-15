@@ -13,7 +13,7 @@ export default function NavbarComponent() {
           </Link>
         </div>
         <div>
-          <Link href="#">
+          <Link href="/auth/login">
             <Button variant="secondary">Login</Button>
           </Link>
         </div>

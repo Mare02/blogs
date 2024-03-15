@@ -7,14 +7,17 @@ export default function BlogsSectionHero({ posts, title }: any) {
     <div>
       <h1 className="text-4xl font-semibold mb-10">{ title }</h1>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {posts.map((post: any) => (
+        {posts.map((post: any, index: number) => (
           <Link
             href={{
               pathname: `/blogs/${post.slug.current}`,
             }}
             key={ post._id }
+            className={`
+              ${index === 0 ? "row-span-2" : "row-span-1 max-h-[300px] overflow-hidden"}
+            `}
           >
-            <div className="overflow-hidden relative w-full h-[500px] bg-base-100 shadow-xl">
+            <div className="overflow-hidden relative w-full h-full bg-base-100 shadow-xl">
               <figure className="w-full h-full">
                 <img className="w-full h-full object-cover" src={ post.thumbnail } alt={ post.title } />
               </figure>
@@ -26,7 +29,7 @@ export default function BlogsSectionHero({ posts, title }: any) {
                   )) }
                 </div>
                 <div className="text-white">
-                  <h2 className="text-3xl drop-shadow-lg font-semibold line-clamp-2">{ post.title }</h2>
+                  <h2 className="text-2xl drop-shadow-lg font-semibold line-clamp-2">{ post.title }</h2>
                   <AuthorProfile
                     name={ post.author.fullName }
                     profileImage={ post.author.profileImage }

@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
 import { Inter } from "next/font/google";
 import '@/styles/globals.css'
 
@@ -7,8 +6,8 @@ import '@/styles/globals.css'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Devinarium",
-  description: "Articles and tutorials for developers",
+  title: "Sign in | Devinarium",
+  description: "Log in or create an account on Devinarium",
 };
 
 export default function RootLayout({
@@ -19,8 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar></Navbar>
-        <div className="py-10 px-4 lg:px-10 container mx-auto">
+        <div className="pb-10 pt-32 px-4 lg:px-10 container mx-auto">
           {children}
         </div>
       </body>

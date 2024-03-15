@@ -1,5 +1,5 @@
 import { SanityService } from "@/lib/services/SanityService";
-import BlogsSectionHero from "@/components/BlogsSectionHero";
+import BlogsSectionHero from "@/components/BlogsSection";
 
 
 export default async function Home() {
