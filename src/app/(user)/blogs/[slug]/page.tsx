@@ -12,7 +12,7 @@ export default async function SingleBlog({ params: { slug } }: any) {
       <p>{ singlePost.smallDescription }</p>
       <div className="not-prose">
         <AuthorProfile
-          name={ singlePost.author.name }
+          name={ singlePost.author.fullName }
           profileImage={ singlePost.author.profileImage }
         />
       </div>

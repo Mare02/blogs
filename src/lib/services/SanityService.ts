@@ -23,10 +23,10 @@ export class SanityService implements ISanityService {
         "id": _id,
       },
       "author": author -> {
-        name,
+        fullName,
         slug,
         socialLinks,
-        "profileImage": image.asset->url,
+        "profileImage": profileImage.asset->url,
       },
       "thumbnail": titleImage.asset->url,
       publishedAt
@@ -51,10 +51,10 @@ export class SanityService implements ISanityService {
         "id": _id,
       },
       "author": author -> {
-        name,
+        fullName,
         slug,
         socialLinks,
-        "profileImage": image.asset->url,
+        "profileImage": profileImage.asset->url,
       },
       "thumbnail": titleImage.asset->url,
       content,

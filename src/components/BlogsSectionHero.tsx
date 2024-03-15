@@ -28,7 +28,7 @@ export default function BlogsSectionHero({ posts, title }: any) {
                 <div className="text-white">
                   <h2 className="text-3xl drop-shadow-lg font-semibold line-clamp-2">{ post.title }</h2>
                   <AuthorProfile
-                    name={ post.author.name }
+                    name={ post.author.fullName }
                     profileImage={ post.author.profileImage }
                   />
                 </div>
