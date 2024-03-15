@@ -18,7 +18,7 @@ export class SanityService implements ISanityService {
       title,
       smallDescription,
       slug,
-      "tags": tags[] -> {
+      "topics": topics[] -> {
         "name": title,
         "id": _id,
       },
@@ -46,7 +46,7 @@ export class SanityService implements ISanityService {
       title,
       slug,
       smallDescription,
-      "tags": tags[] -> {
+      "topics": topics[] -> {
         "name": title,
         "id": _id,
       },

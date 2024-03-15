@@ -49,12 +49,12 @@ const BlogSchema = {
       title: 'Published at',
     },
     {
-      name: 'tags',
+      name: 'topics',
       type: 'array',
       of: [
         {
           type: 'reference',
-          to: [{ type: 'tag' }],
+          to: [{ type: 'topic' }],
         },
       ],
       validation: (Rule: Rule ) => Rule.required(),

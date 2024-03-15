@@ -21,8 +21,8 @@ export default function BlogsSectionHero({ posts, title }: any) {
               <div className="absolute flex flex-col justify-between p-6 inset-0 bg-black/40">
                 <div className="flex items-center flex-wrap gap-3">
                   <Badge variant="secondary">{ post.publishedAt.split("T")[0] }</Badge>
-                  { post.tags.map((tag: { name: string; id: string }) => (
-                    <Badge key={ tag.id }>{ tag.name }</Badge>
+                  { post.topics.map((topic: { name: string; id: string }) => (
+                    <Badge key={ topic.id }>{ topic.name }</Badge>
                   )) }
                 </div>
                 <div className="text-white">

@@ -1,23 +1,23 @@
 import { Rule } from "sanity";
 
-const TagSchema = {
-  name: 'tag',
+const TopicSchema = {
+  name: 'topic',
   type: 'document',
-  title: 'Tag',
+  title: 'Topic',
   fields: [
     {
       name: 'title',
       type: 'string',
-      title: 'Tag Title',
+      title: 'Topic Title',
       validation: (Rule: Rule ) => Rule.required(),
     },
     {
       name: 'description',
       type: 'string',
-      title: 'Tag Description',
+      title: 'Topic Description',
       validation: (Rule: Rule ) => Rule.required(),
     },
   ],
 }
 
-export default TagSchema;
+export default TopicSchema;
