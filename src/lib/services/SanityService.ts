@@ -18,11 +18,18 @@ export class SanityService implements ISanityService {
       title,
       smallDescription,
       slug,
-      "tags": tags[]-> {
+      "tags": tags[] -> {
         "name": title,
         "id": _id,
       },
-      "thumbnail": titleImage.asset->url
+      "author": author -> {
+        name,
+        slug,
+        socialLinks,
+        "profileImage": image.asset->url,
+      },
+      "thumbnail": titleImage.asset->url,
+      publishedAt
     }`;
 
     try {
@@ -39,6 +46,16 @@ export class SanityService implements ISanityService {
       title,
       slug,
       smallDescription,
+      "tags": tags[] -> {
+        "name": title,
+        "id": _id,
+      },
+      "author": author -> {
+        name,
+        slug,
+        socialLinks,
+        "profileImage": image.asset->url,
+      },
       "thumbnail": titleImage.asset->url,
       content,
       publishedAt

@@ -54,11 +54,18 @@ const BlogSchema = {
       of: [
         {
           type: 'reference',
-          to: [{ type: 'tag' }], // Reference to the 'tag' document type
+          to: [{ type: 'tag' }],
         },
       ],
       validation: (Rule: Rule ) => Rule.required(),
-    }
+    },
+    {
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{ type: 'author' }],
+      validation: (Rule: Rule) => Rule.required(),
+    },
   ]
 }
 
