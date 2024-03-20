@@ -3,13 +3,7 @@ import Navbar from "@/components/Navbar";
 import { Inter } from "next/font/google";
 import '@/styles/globals.css'
 
-
 const inter = Inter({ subsets: ["latin"] });
-
-export const metadata: Metadata = {
-  title: "Devinarium",
-  description: "Articles and tutorials for developers",
-};
 
 export default function RootLayout({
   children,

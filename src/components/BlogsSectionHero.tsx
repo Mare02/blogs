@@ -14,7 +14,7 @@ export default function BlogsSectionHero({ posts, title }: any) {
             }}
             key={ post._id }
             className={`
-              ${index === 0 ? "row-span-2" : "row-span-1 max-h-[300px] overflow-hidden"}
+              ${index === 0 ? "row-span-2" : "row-span-1 max-h-[350px] overflow-hidden"}
             `}
           >
             <div className="overflow-hidden relative w-full h-full bg-base-100 shadow-xl">

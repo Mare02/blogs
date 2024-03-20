@@ -1,6 +1,24 @@
 import { SanityService } from '@/lib/services/SanityService';
-import { PortableText } from '@portabletext/react';
 import { AuthorProfile } from '@/components/AuthorProfile';
+import BlogContent from '@/components/BlogContent';
+import { Metadata } from 'next';
+
+
+type MetadataProps = {
+  params: { slug: string };
+};
+
+export async function generateMetadata({
+  params,
+}: MetadataProps): Promise<Metadata> {
+  const slug = params.slug;
+  const sanityService = SanityService.getInstance();
+  const singlePost = await sanityService.getSinglePost(slug).then(data => data[0]);
+  return {
+    title: singlePost.title,
+    description: singlePost.smallDescription,
+  };
+}
 
 export default async function SingleBlog({ params: { slug } }: any) {
   const sanityService = SanityService.getInstance();
@@ -17,8 +35,8 @@ export default async function SingleBlog({ params: { slug } }: any) {
         />
       </div>
       <div className='mx-auto mt-4'>
-        <img className="w-full object-cover" src={ singlePost.thumbnail } alt={ singlePost.title } />
-        <PortableText value={ singlePost.content }></PortableText>
+        <img className="w-full object-cover" src={ singlePost.thumbnail } alt={ singlePost.title }/>
+        <BlogContent content={ singlePost.content }></BlogContent>
       </div>
     </div>
   );

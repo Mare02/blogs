@@ -29,7 +29,7 @@ const BlogSchema = {
     {
       name: 'smallDescription',
       type: 'text',
-      title: 'Small description image of the article',
+      title: 'Small description of the article',
       validation: (Rule: Rule ) => Rule.required(),
     },
     {
@@ -39,7 +39,17 @@ const BlogSchema = {
       of: [
         {
           type: 'block',
-        }
+        },
+        {
+          type: 'image',
+          fields: [
+            {
+              name: 'alt',
+              type: 'string',
+              title: 'Alt',
+            },
+          ],
+        },
       ],
       validation: (Rule: Rule ) => Rule.required(),
     },
