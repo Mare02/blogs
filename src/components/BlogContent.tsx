@@ -18,7 +18,7 @@ export default function BlogContent({ content }: any) {
     <div className='mx-auto'>
       <PortableText
         value={ content }
-        // components={ myPortableTextComponents }
+        components={ myPortableTextComponents }
       ></PortableText>
     </div>
   );
