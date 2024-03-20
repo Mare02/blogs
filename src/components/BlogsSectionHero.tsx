@@ -22,7 +22,7 @@ export default function BlogsSectionHero({ posts, title }: any) {
                 <img className="w-full h-full object-cover" src={ post.thumbnail } alt={ post.title } />
               </figure>
               <div className="absolute flex flex-col justify-between p-6 inset-0 bg-black/40">
-                <div className="flex items-center flex-wrap gap-3">
+                <div className="flex items-center flex-wrap gap-2">
                   <Badge variant="secondary">{ post.publishedAt.split("T")[0] }</Badge>
                   { post.topics.map((topic: { name: string; id: string }) => (
                     <Badge key={ topic.id }>{ topic.name }</Badge>

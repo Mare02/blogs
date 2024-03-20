@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import Navbar from "@/components/Navbar";
 import '@/styles/globals.css'
 
 
@@ -18,7 +19,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <div className="pb-10 pt-32 px-4 lg:px-10 container mx-auto">
+        <Navbar brandOnly={true} static={true}></Navbar>
+        <div className="pb-10 pt-24 px-4 lg:px-10 container mx-auto">
           {children}
         </div>
       </body>

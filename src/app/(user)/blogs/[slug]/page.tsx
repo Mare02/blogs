@@ -35,7 +35,12 @@ export default async function SingleBlog({ params: { slug } }: any) {
         />
       </div>
       <div className='mx-auto mt-4'>
-        <img className="w-full object-cover" src={ singlePost.thumbnail } alt={ singlePost.title }/>
+        <img
+          src={ singlePost.thumbnail }
+          alt={ singlePost.title }
+          loading="lazy"
+          className="w-full object-cover"
+        />
         <BlogContent content={ singlePost.content }></BlogContent>
       </div>
     </div>

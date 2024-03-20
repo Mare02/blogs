@@ -13,7 +13,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar></Navbar>
+        <Navbar static={true}></Navbar>
         <div className="py-10 px-4 lg:px-10 container mx-auto">
           {children}
         </div>
