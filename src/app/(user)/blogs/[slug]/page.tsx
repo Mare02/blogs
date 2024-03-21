@@ -25,22 +25,26 @@ export default async function SingleBlog({ params: { slug } }: any) {
   const singlePost = await sanityService.getSinglePost(slug).then(data => data[0]);
 
   return (
-    <div className="prose mx-auto px-4 md:px-0">
-      <h1 className="text-4xl font-bold mb-4">{ singlePost.title }</h1>
-      <p>{ singlePost.smallDescription }</p>
-      <div className="not-prose">
-        <AuthorProfile
-          name={ singlePost.author.fullName }
-          profileImage={ singlePost.author.profileImage }
-        />
+    <div>
+      <div className="prose mx-auto">
+        <h1 className="text-4xl font-bold mb-4">{ singlePost.title }</h1>
+        <p>{ singlePost.smallDescription }</p>
+        <div className="not-prose">
+          <AuthorProfile
+            name={ singlePost.author.fullName }
+            profileImage={ singlePost.author.profileImage }
+          />
+        </div>
       </div>
-      <div className='mx-auto mt-4'>
+      <div className='mx-auto prose mt-6 border-b-4 pb-6'>
         <img
           src={ singlePost.thumbnail }
           alt={ singlePost.title }
           loading="lazy"
-          className="w-full object-cover"
+          className="object-cover w-full"
         />
+      </div>
+      <div className="prose mx-auto">
         <BlogContent content={ singlePost.content }></BlogContent>
       </div>
     </div>
