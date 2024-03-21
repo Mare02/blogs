@@ -12,6 +12,15 @@ const TopicSchema = {
       validation: (Rule: Rule ) => Rule.required(),
     },
     {
+      name: 'slug',
+      type: 'slug',
+      title: 'Topic slug',
+      options: {
+        source: 'title',
+      },
+      validation: (Rule: Rule ) => Rule.required(),
+    },
+    {
       name: 'description',
       type: 'string',
       title: 'Topic Description',

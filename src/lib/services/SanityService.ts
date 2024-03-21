@@ -68,4 +68,63 @@ export class SanityService implements ISanityService {
       console.log(error);
     }
   }
+
+  async getAllTopics() {
+    const query = groq`*[_type == "topic"]{
+      _id,
+      title,
+      "slug": slug.current,
+    }`;
+
+    try {
+      const data = await client.fetch(query);
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async getSingleTopic(slug: string) {
+    const query = groq`*[_type == "topic" && slug.current == "${slug}"] {
+      _id,
+      title,
+      description,
+      "slug": slug.current,
+    }`;
+
+    try {
+      const data = await client.fetch(query);
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
+
+  async getPostsByTopic(slug: string) {
+    const query = groq`*[_type == "blog" && "${slug}" in topics[]->slug.current] {
+      _id,
+      title,
+      smallDescription,
+      slug,
+      "topics": topics[] -> {
+        "name": title,
+        "id": _id,
+      },
+      "author": author -> {
+          fullName,
+          slug,
+          socialLinks,
+          "profileImage": profileImage.asset->url,
+      },
+      "thumbnail": titleImage.asset->url,
+      publishedAt
+    }`;
+
+    try {
+      const data = await client.fetch(query);
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+  }
 }

@@ -2,10 +2,10 @@ import { AuthorProfile } from "@/components/AuthorProfile";
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link";
 
-export default function BlogsSectionHero({ posts, title }: any) {
+export default function BlogsSection({ posts, title }: any) {
   return (
     <div>
-      <h1 className="text-4xl font-semibold mb-10">{ title }</h1>
+      {title && <h1 className="text-4xl font-semibold mb-10">{ title }</h1>}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {posts.map((post: any, index: number) => (
           <Link
