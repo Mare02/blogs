@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Navbar from "@/components/Navbar";
+import { NavbarScrollWrapper } from "@/components/NavbarScrollWrapper";
 import { Inter } from "next/font/google";
 import '@/styles/globals.css'
 
@@ -13,7 +14,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar static={true}></Navbar>
+        <NavbarScrollWrapper>
+          <Navbar static={true}></Navbar>
+        </NavbarScrollWrapper>
         <div className="py-10 px-4 lg:px-10 container mx-auto">
           {children}
         </div>
