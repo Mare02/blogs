@@ -21,6 +21,7 @@ export class SanityService implements ISanityService {
       "topics": topics[] -> {
         "name": title,
         "id": _id,
+        "slug": slug.current,
       },
       "author": author -> {
         fullName,
@@ -109,6 +110,7 @@ export class SanityService implements ISanityService {
       "topics": topics[] -> {
         "name": title,
         "id": _id,
+        "slug": slug.current,
       },
       "author": author -> {
           fullName,

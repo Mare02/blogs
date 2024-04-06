@@ -26,6 +26,13 @@ const TopicSchema = {
       title: 'Topic Description',
       validation: (Rule: Rule ) => Rule.required(),
     },
+    {
+      name: 'parentTopic',
+      title: 'Parent Topic',
+      type: 'reference',
+      to: [{ type: 'topic' }],
+      // weak: true,
+    }
   ],
 }
 

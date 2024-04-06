@@ -36,7 +36,7 @@ export default async function SingleBlog({ params: { slug } }: any) {
           />
         </div>
       </div>
-      <div className='mx-auto prose mt-6 border-b-4 pb-6'>
+      <div className='mx-auto prose mt-6'>
         <img
           src={ singlePost.thumbnail }
           alt={ singlePost.title }

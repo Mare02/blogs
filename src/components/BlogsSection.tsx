@@ -24,9 +24,7 @@ export default function BlogsSection({ posts, title }: any) {
               <div className="absolute flex flex-col justify-between p-6 inset-0 bg-black/40">
                 <div className="flex items-center flex-wrap gap-2">
                   <Badge variant="secondary">{ post.publishedAt.split("T")[0] }</Badge>
-                  { post.topics.map((topic: { name: string; id: string }) => (
-                    <Badge key={ topic.id }>{ topic.name }</Badge>
-                  )) }
+                  { post.topics[0] && (<Badge key={ post.topics[0].id }>{ post.topics[0].name }</Badge>) }
                 </div>
                 <div className="text-white">
                   <h2 className="text-2xl drop-shadow-lg font-semibold line-clamp-2">{ post.title }</h2>
